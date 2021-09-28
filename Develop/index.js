@@ -28,17 +28,15 @@ const questions = [{
 }, {
     type: "list",
     message: "Which license do you want to use?",
-    name: "License",
-    Choices: [
-        'MIT', 'Apache', 'none'
-    ]
+    name: "license",
+    choices: ['MIT', 'Apache', 'none'],
 }, {
     type: "input",
     message: "Enter contributing guidelines",
     name: "Contributing"
 }, {
     type: "input",
-    message: "what command to entertest this app?",
+    message: "what command do i use to run test this app?",
     name: "Tests"
 },{
     type: 'input',
@@ -71,11 +69,6 @@ function init() {
         writeToFile("README.md", generatemarkdown(data));
         console.log(data)
     })
-    //.then(function(data) {
-     //   writeToFile("README.md", generatemarkdown(data));
-      //  console.log(data)
-
-    //})
 }
 
 // Function call to initialize app

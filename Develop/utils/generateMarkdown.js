@@ -10,7 +10,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
 if(license != 'none'){
-  return '*[License](#license)'
+  return '*[license](#license)'
 }
 }
 
@@ -19,21 +19,22 @@ if(license != 'none'){
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if(license != 'none'){
-    return `##License ${data.License}`
+    return `##license 
+    This project is licensed under the ${license} license.`
   }
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.Title}
-  ${renderLicenseBadge(data.License)}
+  ${renderLicenseBadge(data.license)}
   ## Description
   ${data.Description}
 
   ## Table of Contents
   *[Installation](#installation)
   *[Usage](#usage)
-  ${renderLicenseLink(data.License)}
+  ${renderLicenseLink(data.license)}
   *[Credits](#credits)
   *[Test](#test)
   *[Email](#email)
@@ -45,7 +46,7 @@ function generateMarkdown(data) {
   ##Usage
   To use the application you will need ${data.Usage}
 
-  ${renderLicenseSection(data.License)}
+  ${renderLicenseSection(data.license)}
   
   ##Credits
   Contributors: ${data.Contributing}
