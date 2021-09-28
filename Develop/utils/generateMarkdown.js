@@ -10,7 +10,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
 if(license != 'none'){
-  return '*[license](#license)'
+  return '[license](#license)'
 }
 }
 
@@ -20,6 +20,7 @@ if(license != 'none'){
 function renderLicenseSection(license) {
   if(license != 'none'){
     return `##license 
+    
     This project is licensed under the ${license} license.`
   }
 }
@@ -27,37 +28,55 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.Title}
+  
   ${renderLicenseBadge(data.license)}
+  
   ## Description
+  
   ${data.Description}
 
   ## Table of Contents
-  *[Installation](#installation)
-  *[Usage](#usage)
-  ${renderLicenseLink(data.license)}
-  *[Credits](#credits)
-  *[Test](#test)
-  *[Email](#email)
-  *[GithubUsername](#github-username)
+  
+  
+  -[Installation](#installation)
+  -[Usage](#usage)
+  -${renderLicenseLink(data.license)}
+  -[Credits](#credits)
+  -[Test](#test)
+  -[Email](#email)
+  -[GithubUsername](#github-username)
   
   ##Installation
+  
+  
   Here is what you need to run the appliction ${data.Installation}
 
-  ##Usage
+  ## Usage
+  
+  
   To use the application you will need ${data.Usage}
 
+  
+  
   ${renderLicenseSection(data.license)}
   
-  ##Credits
+  ## Credits
+  
   Contributors: ${data.Contributing}
 
-  ##Tests
+  ## Tests
+  
+  
   Here is the command need to run the test ${data.Tests}
 
-  ##Email
+  ## Email
+  
+  
   if have any question plz Email anytime ${data.Email}
 
-  ##Github Username
+  ## Github Username
+  
+  
   https://github.com/${data.Username}
 `;
 }
